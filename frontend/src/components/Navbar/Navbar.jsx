@@ -26,11 +26,11 @@ export default function Navbar() {
     ]
 
     return (
-        <div className="location-container">
+        <div className="options-container">
             {cities.map(city => (
                 <div
                     key={city.id}
-                    className="location"
+                    className="option"
                 >
                     {city.title}
                 </div>

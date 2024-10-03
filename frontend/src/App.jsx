@@ -1,5 +1,6 @@
 import Inputs from "./components/Inputs/Inputs"
 import Navbar from "./components/Navbar/Navbar"
+import TimeAndLocation from "./components/TimeAndLocation/TimeAndLocation"
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <div className="container shadow-2xl">
         <Navbar />
         <Inputs />
+        <TimeAndLocation />
       </div>
     </>
   )

@@ -1,4 +1,4 @@
-.location-container {
+.options-container {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -6,7 +6,7 @@
     margin-bottom: 1.5rem;
 }
 
-.location {
+.option {
     color: white;
     font-size: 1.125rem;
     line-height: 1.75rem;

@@ -1,0 +1,29 @@
+.time-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.time {
+    color: white;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 200;
+}
+
+.location-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.location {
+    color: white;
+    font-size: 1.875rem;
+    font-weight: 500;
+    line-height: 2.25rem;
+}
