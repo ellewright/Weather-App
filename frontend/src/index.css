@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --cyan: #0e7490;
+    --blue: #1d4ed8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.container {
+    background-image: linear-gradient(to bottom right, var(--cyan), var(--blue));
+    margin-left: auto;
+    margin-right: auto;
+    height: fit-content;
+    max-width: 768px;
+    margin-top: 1rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+}
