@@ -1,0 +1,79 @@
+.input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.search-container> :not([hidden])~ :not([hidden]) {
+    --space-x-reverse: 0;
+    margin-right: calc(1rem
+            /* 16px */
+            * var(--space-x-reverse));
+    margin-left: calc(1rem
+            /* 16px */
+            * calc(1 - var(--space-x-reverse)));
+}
+
+.search-input {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 300;
+    padding: 0.5rem;
+    width: 75%;
+    text-transform: capitalize;
+}
+
+.search-input:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.search-input::placeholder {
+    text-transform: lowercase;
+}
+
+.icon {
+    color: white;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.icon:hover {
+    --scale-x: 1.10;
+    --scale-y: 1.10;
+    transform: scaleX(var(--scale-x)) scaleY(var(--scale-y));
+}
+
+.f-or-c {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+
+.fahrenheit,
+.celsius {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    color: white;
+    font-weight: 300;
+}
+
+.pipe {
+    color: white;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+}
