@@ -1,0 +1,103 @@
+.main-detail-container {
+    color: var(--bright-cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+.sub-detail-container {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.weather-icon {
+    width: 5rem;
+}
+
+.temp {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.temp-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.temp-details> :not([hidden])~ :not([hidden]) {
+    --space-y-reverse: 0;
+    margin-top: calc(0.5rem * calc(1 - var(--space-y-reverse)));
+    margin-bottom: calc(0.5rem * var(--space-y-reverse));
+}
+
+.feels-like,
+.humidity,
+.wind {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.feels-like span,
+.humidity span,
+.wind span {
+    font-weight: 500;
+    margin-left: 0.25rem;
+}
+
+.sun,
+.eye-dropper,
+.cloud {
+    color: var(--bright-blue);
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.25rem;
+}
+
+.more-details-container {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+/* .more-details-container> :not([hidden])~ :not([hidden]) {
+    --space-x-reverse: 0;
+    margin-right: calc(0.5rem var(--space-x-reverse));
+    margin-left: calc(0.5rem calc(1 - var(--space-x-reverse)));
+} */
+
+.more-details-container p {
+    font-weight: 300;
+}
+
+.more-details-container p span {
+    font-weight: 500;
+    margin-left: 0.25rem;
+}
+
+.sunrise-icon,
+.sunset-icon,
+.max-temp-icon,
+.min-temp-icon {
+    color: var(--bright-blue);
+    width: 1.5rem;
+    height: 1.5rem;
+}

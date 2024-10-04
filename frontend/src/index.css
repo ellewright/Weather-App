@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 :root {
+    --bright-cyan: #67e8f9;
     --cyan: #0e7490;
+    --bright-blue: #3b82f6;
     --blue: #1d4ed8;
 }
 
@@ -21,7 +23,7 @@ html {
     margin-left: auto;
     margin-right: auto;
     height: fit-content;
-    max-width: 768px;
+    max-width: 1024px;
     margin-top: 1rem;
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
