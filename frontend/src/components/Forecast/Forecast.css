@@ -1,0 +1,48 @@
+.forecast-title-container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.forecast-title {
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.divider {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.forecast-details-container {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.forecast-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.forecast-time {
+    font-weight: 300;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.forecast-icon {
+    width: 3rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.forecast-temperature {
+    font-weight: 500;
+}

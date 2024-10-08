@@ -1,3 +1,4 @@
+import Forecast from "./components/Forecast/Forecast"
 import Inputs from "./components/Inputs/Inputs"
 import Navbar from "./components/Navbar/Navbar"
 import TempAndDetails from "./components/TempAndDetails/TempAndDetails"
@@ -11,6 +12,12 @@ function App() {
         <Inputs />
         <TimeAndLocation />
         <TempAndDetails />
+        <Forecast
+          isHourly={true}
+        />
+        <Forecast
+          isHourly={false}
+        />
       </div>
     </>
   )
