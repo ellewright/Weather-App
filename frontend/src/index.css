@@ -3,19 +3,21 @@
 @tailwind utilities;
 
 :root {
+    --font-family: "Poppins", sans-serif;
     --bright-cyan: #67e8f9;
     --cyan: #0e7490;
     --bright-blue: #3b82f6;
     --blue: #1d4ed8;
 }
 
-html {
-    font-family: "Poppins", sans-serif;
-}
-
 * {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
 }
 
 .container {
