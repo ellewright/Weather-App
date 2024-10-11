@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"
 import getFormattedWeatherData from "../api/weatherApi"
 import Forecast from "./components/Forecast/Forecast"
 import Inputs from "./components/Inputs/Inputs"
@@ -7,28 +8,46 @@ import TimeAndLocation from "./components/TimeAndLocation/TimeAndLocation"
 
 function App() {
 
-  async function fetchWeather() {
-    const data = await getFormattedWeatherData({
-      q: "Kansas City"
-    })
-    console.log(data)
-  }
+  const [query, setQuery] = useState({ q: "Kansas City" })
+  const [units, setUnits] = useState("imperial")
+  const [weather, setWeather] = useState(null)
 
-  fetchWeather()
+  useEffect(() => {
+    async function fetchWeather() {
+      await getFormattedWeatherData({
+        ...query,
+        units
+      })
+        .then((data) => {
+          setWeather(data)
+        })
+    }
+
+    fetchWeather()
+  }, [query, units])
 
   return (
     <>
       <div className="container shadow-2xl">
         <Navbar />
         <Inputs />
-        <TimeAndLocation />
-        <TempAndDetails />
-        <Forecast
-          isHourly={true}
-        />
-        <Forecast
-          isHourly={false}
-        />
+
+        {weather && (
+          <>
+            <TimeAndLocation
+              weather={weather}
+            />
+            <TempAndDetails
+              weather={weather}
+            />
+            <Forecast
+              isHourly={true}
+            />
+            <Forecast
+              isHourly={false}
+            />
+          </>
+        )}
       </div>
     </>
   )

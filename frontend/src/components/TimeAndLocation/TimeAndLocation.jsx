@@ -1,16 +1,17 @@
+import { formatToLocalTime } from "../../../api/weatherApi"
 import "./TimeAndLocation.css"
 
-export default function TimeAndLocation() {
+export default function TimeAndLocation({ weather: { dt, timezone, name, country } }) {
     return (
         <>
             <div className="time-container">
                 <p className="time">
-                    Thursday, 3 October 2024 | Local time: 4:02 PM
+                    {formatToLocalTime(dt, timezone)}
                 </p>
             </div>
             <div className="location-container">
                 <p className="location">
-                    Kansas City, MO
+                    {`${name}`}, {`${country}`}
                 </p>
             </div>
         </>

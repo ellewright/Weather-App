@@ -73,6 +73,17 @@ function formatCurrentWeather(data) {
 //     return { timezone, daily, hourly }
 // }
 
+export function formatToLocalTime(seconds, zone, format = "cccc, dd LLL yyyy' | Local time: 'hh:mm a") {
+    return DateTime
+        .fromSeconds(seconds)
+        .setZone(zone)
+        .toFormat(format)
+}
+
+export function iconUrlFromCode(code) {
+    return `http://openweathermap.org/img/wn/${code}@2x.png`
+}
+
 export default function getFormattedWeatherData(searchParams) {
     const formattedCurrentWeather = getWeatherData("weather", searchParams)
         .then((data) => formatCurrentWeather(data))
@@ -89,10 +100,3 @@ export default function getFormattedWeatherData(searchParams) {
 
     return formattedCurrentWeather
 }
-
-// function formatToLocalTime(seconds, zone, format = "cccc, dd LLL yyyy' | Local time: 'hh:mm a") {
-//     DateTime
-//         .fromSeconds(seconds)
-//         .setZone(zone)
-//         .toFormat(format)
-// }
