@@ -40,12 +40,12 @@ function App() {
             <TempAndDetails
               weather={weather}
             />
-            <Forecast
+            {/* <Forecast
               isHourly={true}
             />
             <Forecast
               isHourly={false}
-            />
+            /> */}
           </>
         )}
       </div>
