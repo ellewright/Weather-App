@@ -45,7 +45,7 @@ export default function TempAndDetails({ weather: {
                         <CloudIcon className="cloud" />
                         Wind:
                         <span>
-                            {speed} mph
+                            {speed.toFixed()} mph
                         </span>
                     </div>
                 </div>
