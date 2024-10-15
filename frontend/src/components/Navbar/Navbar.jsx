@@ -15,14 +15,14 @@ export default function Navbar({ setQuery }) {
             id: 3,
             title: "Chicago"
         },
-        {
-            id: 4,
-            title: "Nashville"
-        },
-        {
-            id: 5,
-            title: "Seattle"
-        },
+        // {
+        //     id: 4,
+        //     title: "Nashville"
+        // },
+        // {
+        //     id: 5,
+        //     title: "Seattle"
+        // },
     ]
 
     return (
