@@ -4,6 +4,8 @@
 
 :root {
     --font-family: "Poppins", sans-serif;
+    --yellow: #a16207;
+    --orange: #c2410c;
     --bright-cyan: #67e8f9;
     --cyan: #0e7490;
     --bright-blue: #3b82f6;
@@ -21,7 +23,6 @@ body {
 }
 
 .container {
-    background-image: linear-gradient(to bottom right, var(--cyan), var(--blue));
     margin-left: auto;
     margin-right: auto;
     height: fit-content;

@@ -26,9 +26,26 @@ function App() {
     fetchWeather()
   }, [query, units])
 
+  function handleBackground() {
+    if (!weather) {
+      return "linear-gradient(to bottom right, var(--cyan), var(--blue))"
+    }
+    const threshold = units === "metric" ? 20 : 60
+    if (weather.temp <= threshold) {
+      return "linear-gradient(to bottom right, var(--cyan), var(--blue))"
+    }
+
+    return "linear-gradient(to bottom right, var(--yellow), var(--orange))"
+  }
+
   return (
     <>
-      <div className="container shadow-2xl">
+      <div
+        className="container shadow-2x"
+        style={{
+          backgroundImage: `${handleBackground()}`
+        }}
+      >
         <Navbar
           setQuery={setQuery}
         />
