@@ -1,3 +1,4 @@
+import { iconUrlFromCode } from "../../../api/weatherApi"
 import "./Forecast.css"
 
 const hourlyForecast = [
@@ -102,7 +103,7 @@ const dailyForecast = [
     },
 ]
 
-export default function Forecast({ isHourly }) {
+export default function Forecast({ isHourly, items }) {
     return (
         <>
             <div className="forecast-title-container">
@@ -112,37 +113,20 @@ export default function Forecast({ isHourly }) {
             </div>
             <hr className="divider" />
             <div className="forecast-details-container">
-                {isHourly ? (
-                    hourlyForecast.map((hour) => (
-                        <div key={hour.id} className="forecast-detail">
-                            <p className="forecast-time">
-                                {hour.time}
-                            </p>
-                            <img
-                                src={hour.img.src}
-                                className="forecast-icon"
-                                alt="Forecast icon." />
-                            <p className="forecast-temperature">
-                                {hour.temperature}
-                            </p>
-                        </div>
-                    ))
-                ) : (
-                    dailyForecast.map((day) => (
-                        <div key={day.id} className="forecast-detail">
-                            <p className="forecast-time">
-                                {day.day}
-                            </p>
-                            <img
-                                src={day.img.src}
-                                className="forecast-icon"
-                                alt="Forecast icon." />
-                            <p className="forecast-temperature">
-                                {day.temperature}
-                            </p>
-                        </div>
-                    ))
-                )}
+                {item.map((item) => (
+                    <div key={item.id} className="forecast-detail">
+                        <p className="forecast-time">
+                            {item.title}
+                        </p>
+                        <img
+                            src={iconUrlFromCode(item.icon)}
+                            className="forecast-icon"
+                            alt="Forecast icon." />
+                        <p className="forecast-temperature">
+                            {`${item.temp.toFixed()}°`}
+                        </p>
+                    </div>
+                ))}
             </div>
         </>
     )

@@ -29,8 +29,8 @@ function App() {
   return (
     <>
       <div className="container shadow-2xl">
-        {/* <Navbar /> */}
-        {/* <Inputs /> */}
+        <Navbar />
+        <Inputs />
 
         {weather && (
           <>
@@ -41,10 +41,10 @@ function App() {
               weather={weather}
             />
             {/* <Forecast
-              isHourly={true}
-            />
-            <Forecast
-              isHourly={false}
+              isHourly={true} items={weather.hourly}
+            /> */}
+            {/* <Forecast
+              isHourly={false} items={weather.daily}
             /> */}
           </>
         )}

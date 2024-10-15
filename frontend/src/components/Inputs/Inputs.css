@@ -64,6 +64,13 @@
     width: 25%;
 }
 
+.f-or-c button:hover {
+    --scale-x: 1.10;
+    --scale-y: 1.10;
+    transform: scaleX(var(--scale-x)) scaleY(var(--scale-y));
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
 .fahrenheit,
 .celsius {
     font-size: 1.25rem;

@@ -65,7 +65,7 @@ function formatCurrentWeather(data) {
 //     hourly = hourly.slice(1, 6).map((hour) => {
 //         return {
 //             title: formatToLocalTime(hour.dt, timezone, "hh:mm a"),
-//             temp: hour.temp.day,
+//             temp: hour.temp,
 //             icon: hour.weather[0].icon
 //         }
 //     })
