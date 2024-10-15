@@ -50,15 +50,23 @@ export default function TempAndDetails({ weather: {
                     </div>
                 </div>
             </div>
-            <div className="more-details-container space-x-2">
+            <div className="more-details-container">
                 <SunIcon className="sunrise-icon" />
-                <p>Sunrise: <span>{formatToLocalTime(sunrise, timezone, "hh:mm a")}</span></p><p>|</p>
+                <p>
+                    Sunrise: <span>{formatToLocalTime(sunrise, timezone, "h:mm a")}</span>
+                </p>
                 <MoonIcon className="sunset-icon" />
-                <p>Sunset: <span>{formatToLocalTime(sunset, timezone, "hh:mm a")}</span></p><p>|</p>
+                <p>
+                    Sunset: <span>{formatToLocalTime(sunset, timezone, "h:mm a")}</span>
+                </p>
                 <ArrowUpIcon className="max-temp-icon" />
-                <p>High: <span>{temp_max.toFixed()}°</span></p><p>|</p>
+                <p>
+                    High: <span>{temp_max.toFixed()}°</span>
+                </p>
                 <ArrowDownIcon className="min-temp-icon" />
-                <p>Low: <span>{temp_min.toFixed()}°</span></p>
+                <p>
+                    Low: <span>{temp_min.toFixed()}°</span>
+                </p>
             </div>
         </>
     )

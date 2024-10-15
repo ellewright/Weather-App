@@ -73,7 +73,14 @@ function formatCurrentWeather(data) {
 //     return { timezone, daily, hourly }
 // }
 
-export function formatToLocalTime(seconds, zone, format = "cccc, dd LLL yyyy' | Local time: 'hh:mm a") {
+export function formatDate(seconds, zone, format = "cccc, LLL dd yyyy") {
+    return DateTime
+        .fromSeconds(seconds)
+        .setZone(zone)
+        .toFormat(format)
+}
+
+export function formatToLocalTime(seconds, zone, format = "h:mm a") {
     return DateTime
         .fromSeconds(seconds)
         .setZone(zone)

@@ -29,8 +29,8 @@ function App() {
   return (
     <>
       <div className="container shadow-2xl">
-        <Navbar />
-        <Inputs />
+        {/* <Navbar /> */}
+        {/* <Inputs /> */}
 
         {weather && (
           <>

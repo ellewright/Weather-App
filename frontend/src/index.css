@@ -32,3 +32,17 @@ body {
     padding-left: 8rem;
     padding-right: 8rem;
 }
+
+@media only screen and (max-width: 599px) {
+    .container {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1023px) {
+    .container {
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+}
