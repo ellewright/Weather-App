@@ -29,9 +29,14 @@ function App() {
   return (
     <>
       <div className="container shadow-2xl">
-        <Navbar />
-        <Inputs />
-
+        <Navbar
+          setQuery={setQuery}
+        />
+        <Inputs
+          setQuery={setQuery}
+          units={units}
+          setUnits={setUnits}
+        />
         {weather && (
           <>
             <TimeAndLocation

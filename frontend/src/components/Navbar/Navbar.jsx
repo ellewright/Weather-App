@@ -1,6 +1,6 @@
 import "./Navbar.css"
 
-export default function Navbar() {
+export default function Navbar({ setQuery }) {
 
     const cities = [
         {
@@ -28,12 +28,15 @@ export default function Navbar() {
     return (
         <div className="options-container">
             {cities.map(city => (
-                <div
+                <button
                     key={city.id}
                     className="option"
+                    onClick={() => setQuery({
+                        q: city.title
+                    })}
                 >
                     {city.title}
-                </div>
+                </button>
             ))}
         </div>
     )
