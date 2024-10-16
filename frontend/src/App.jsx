@@ -5,6 +5,8 @@ import Inputs from "./components/Inputs/Inputs"
 import Navbar from "./components/Navbar/Navbar"
 import TempAndDetails from "./components/TempAndDetails/TempAndDetails"
 import TimeAndLocation from "./components/TimeAndLocation/TimeAndLocation"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -14,11 +16,15 @@ function App() {
 
   useEffect(() => {
     async function fetchWeather() {
+      const message = `Fetching weather for ${query.q ? query.q + "." : "current location."}`
+      toast.info(message)
+
       await getFormattedWeatherData({
         ...query,
         units
       })
         .then((data) => {
+          toast.success(`Successfully fetched weather for ${data.name}.`)
           setWeather(data)
         })
     }
@@ -71,6 +77,11 @@ function App() {
           </>
         )}
       </div>
+      <ToastContainer
+        autoClose={5000}
+        theme="colored"
+        newestOnTop={true}
+      />
     </>
   )
 }
