@@ -35,6 +35,7 @@ function formatCurrentWeather(data) {
             sunset
         },
         name,
+        timezone
     } = data
 
     const {
@@ -43,44 +44,24 @@ function formatCurrentWeather(data) {
     } = weather[0]
 
     return {
-        lat, lon, details, icon, temp, feels_like, temp_min, temp_max, humidity, speed, dt, country, sunrise, sunset, name
+        lat, lon, details, icon, temp, feels_like, temp_min, temp_max, humidity, speed, dt, country, sunrise, sunset, name, timezone
     }
 }
 
-// function formatForecastWeather(data) {
-//     let {
-//         timezone,
-//         daily,
-//         hourly
-//     } = data
+export function formatDate(seconds, timezoneOffset, format = "cccc, LLL dd yyyy") {
+    const timezone = timezoneOffset / 3600;
+    const zone = timezone >= 0 ? `UTC+${timezone}` : `UTC${timezone}`;
 
-//     daily = daily.slice(1, 6).map((day) => {
-//         return {
-//             title: formatToLocalTime(day.dt, timezone, "ccc"),
-//             temp: day.temp.day,
-//             icon: day.weather[0].icon
-//         }
-//     })
-
-//     hourly = hourly.slice(1, 6).map((hour) => {
-//         return {
-//             title: formatToLocalTime(hour.dt, timezone, "hh:mm a"),
-//             temp: hour.temp,
-//             icon: hour.weather[0].icon
-//         }
-//     })
-
-//     return { timezone, daily, hourly }
-// }
-
-export function formatDate(seconds, zone, format = "cccc, LLL dd yyyy") {
     return DateTime
         .fromSeconds(seconds)
         .setZone(zone)
         .toFormat(format)
 }
 
-export function formatToLocalTime(seconds, zone, format = "h:mm a") {
+export function formatToLocalTime(seconds, timezoneOffset, format = "h:mm a") {
+    const timezone = timezoneOffset / 3600;
+    const zone = timezone >= 0 ? `UTC+${timezone}` : `UTC${timezone}`;
+
     return DateTime
         .fromSeconds(seconds)
         .setZone(zone)
@@ -94,16 +75,6 @@ export function iconUrlFromCode(code) {
 export default function getFormattedWeatherData(searchParams) {
     const formattedCurrentWeather = getWeatherData("weather", searchParams)
         .then((data) => formatCurrentWeather(data))
-
-    const { lat, lon } = formattedCurrentWeather
-
-    // const formattedForecastWeather = getWeatherData("onecall", {
-    //     lat,
-    //     lon,
-    //     exclude: "current, minutely, alerts",
-    //     units: searchParams.units
-    // })
-    //     .then((data) => formatForecastWeather(data))
 
     return formattedCurrentWeather
 }
