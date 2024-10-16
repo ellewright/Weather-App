@@ -5,8 +5,8 @@ import Inputs from "./components/Inputs/Inputs"
 import Navbar from "./components/Navbar/Navbar"
 import TempAndDetails from "./components/TempAndDetails/TempAndDetails"
 import TimeAndLocation from "./components/TimeAndLocation/TimeAndLocation"
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
 
@@ -16,17 +16,22 @@ function App() {
 
   useEffect(() => {
     async function fetchWeather() {
-      const message = `Fetching weather for ${query.q ? query.q + "." : "current location."}`
+      let message = `Fetching weather for ${query.q ? query.q : "current location"}.`
       toast.info(message)
-
-      await getFormattedWeatherData({
-        ...query,
-        units
-      })
-        .then((data) => {
-          toast.success(`Successfully fetched weather for ${data.name}.`)
-          setWeather(data)
+      try {
+        await getFormattedWeatherData({
+          ...query,
+          units
         })
+          .then((data) => {
+            toast.success(`Successfully fetched weather for ${data.name}.`)
+            setWeather(data)
+          })
+      } catch (error) {
+        message = `Cannot fetch weather for ${query.q ? query.q : "current location"}. Please try again.`
+        toast.error(message)
+        console.error(error)
+      }
     }
 
     fetchWeather()

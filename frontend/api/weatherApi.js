@@ -49,8 +49,8 @@ function formatCurrentWeather(data) {
 }
 
 export function formatDate(seconds, timezoneOffset, format = "cccc, LLL dd yyyy") {
-    const timezone = timezoneOffset / 3600;
-    const zone = timezone >= 0 ? `UTC+${timezone}` : `UTC${timezone}`;
+    const timezone = timezoneOffset / 3600
+    const zone = timezone >= 0 ? `UTC+${timezone}` : `UTC${timezone}`
 
     return DateTime
         .fromSeconds(seconds)
@@ -59,8 +59,8 @@ export function formatDate(seconds, timezoneOffset, format = "cccc, LLL dd yyyy"
 }
 
 export function formatToLocalTime(seconds, timezoneOffset, format = "h:mm a") {
-    const timezone = timezoneOffset / 3600;
-    const zone = timezone >= 0 ? `UTC+${timezone}` : `UTC${timezone}`;
+    const timezone = timezoneOffset / 3600
+    const zone = timezone >= 0 ? `UTC+${timezone}` : `UTC${timezone}`
 
     return DateTime
         .fromSeconds(seconds)
