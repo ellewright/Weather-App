@@ -33,15 +33,19 @@ function App() {
   }, [query, units])
 
   function handleBackground() {
+    const lowThreshold = units === "imperial" ? 32 : 0
+    const highThreshold = units === "imperial" ? 60 : 20
+
     if (!weather) {
       return "linear-gradient(to bottom right, var(--cyan), var(--blue))"
     }
-    const threshold = units === "metric" ? 20 : 60
-    if (weather.temp <= threshold) {
+
+    if (weather.temp > highThreshold) {
+      return "linear-gradient(to bottom right, var(--yellow), var(--orange))"
+    } else if (weather.temp > lowThreshold) {
       return "linear-gradient(to bottom right, var(--cyan), var(--blue))"
     }
-
-    return "linear-gradient(to bottom right, var(--yellow), var(--orange))"
+    return "linear-gradient(to bottom right, var(--bright-cyan), var(--cyan))"
   }
 
   return (
@@ -67,6 +71,7 @@ function App() {
             />
             <TempAndDetails
               weather={weather}
+              units={units}
             />
             {/* <Forecast
               isHourly={true} items={weather.hourly}
