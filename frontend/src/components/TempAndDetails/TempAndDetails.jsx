@@ -17,6 +17,10 @@ export default function TempAndDetails({ weather: {
         const lowThreshold = units === "imperial" ? 32 : 0
         const highThreshold = units === "imperial" ? 60 : 20
 
+        if (details === "Rain") {
+            return "white"
+        }
+
         if (temp > highThreshold) {
             return "orange"
         } else if (temp > lowThreshold) {

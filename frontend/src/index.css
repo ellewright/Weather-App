@@ -4,8 +4,12 @@
 
 :root {
     --font-family: "Poppins", sans-serif;
-    --yellow: #a16207;
+
+    --storm-gray: rgb(123, 123, 123);
+    --storm-dark-gray: rgb(77, 77, 77);
+
     --orange: #c2410c;
+    --yellow: #a16207;
     --bright-cyan: #67e8f9;
     --cyan: #0e7490;
     --bright-blue: #3b82f6;

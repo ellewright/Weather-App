@@ -45,6 +45,10 @@ function App() {
       return "linear-gradient(to bottom right, var(--cyan), var(--blue))"
     }
 
+    if (weather.details === "Rain") {
+      return "linear-gradient(to bottom right, var(--storm-gray), var(--storm-dark-gray))"
+    }
+
     if (weather.temp > highThreshold) {
       return "linear-gradient(to bottom right, var(--yellow), var(--orange))"
     } else if (weather.temp > lowThreshold) {
