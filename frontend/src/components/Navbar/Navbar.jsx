@@ -5,15 +5,15 @@ export default function Navbar({ setQuery }) {
     const cities = [
         {
             id: 1,
-            title: "Cincinnati"
+            title: "Sacramento"
         },
         {
             id: 2,
-            title: "Louisville"
+            title: "Kansas City"
         },
         {
             id: 3,
-            title: "Chicago"
+            title: "Boston"
         },
         // {
         //     id: 4,
