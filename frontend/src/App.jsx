@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
 
-  const [query, setQuery] = useState({ q: "Kansas City" })
+  const [query, setQuery] = useState({ q: "Chicago" })
   const [units, setUnits] = useState("imperial")
   const [weather, setWeather] = useState(null)
 
@@ -92,7 +92,7 @@ function App() {
         )}
       </div>
       <ToastContainer
-        autoClose={5000}
+        autoClose={1000}
         theme="colored"
         newestOnTop={true}
       />

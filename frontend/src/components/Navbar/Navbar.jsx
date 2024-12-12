@@ -9,7 +9,7 @@ export default function Navbar({ setQuery }) {
         },
         {
             id: 2,
-            title: "Kansas City"
+            title: "Chicago"
         },
         {
             id: 3,
